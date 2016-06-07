@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="id_category" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongTo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goods" inverseName="category" inverseEntity="Goods" syncable="YES"/>
+    </entity>
+    <entity name="Goods" representedClassName=".Goods" syncable="YES">
+        <attribute name="content_desc_goods" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deposit" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id_goods" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name_goods" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic_goods" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rent" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="status_goods_isBorrowed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="status_goods_isDamaged" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="status_goods_isOnShelf" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="belongTo" inverseEntity="Category" syncable="YES"/>
+        <relationship name="order" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="beBorrowed" inverseEntity="Order" syncable="YES"/>
+        <relationship name="own" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="goods" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Order" representedClassName=".Order" syncable="YES">
+        <attribute name="address_get" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address_return" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content_desc_damage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content_judge_borrower" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content_judge_goods" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content_judge_owner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date_endUse" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_get" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_return" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_startUse" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id_order" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status_order_isComfirmed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="status_order_isCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="status_order_isGet" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="status_order_isReturned" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="beBorrowed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goods" inverseName="order" inverseEntity="Goods" syncable="YES"/>
+        <relationship name="borrow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="order" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="address_loc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content_desc_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="credit" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id_user" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="goods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goods" inverseName="own" inverseEntity="Goods" syncable="YES"/>
+        <relationship name="order" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="borrow" inverseEntity="Order" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-234" positionY="-99" width="128" height="88"/>
+        <element name="Goods" positionX="-461" positionY="-40" width="128" height="225"/>
+        <element name="Order" positionX="-2" positionY="-100" width="128" height="300"/>
+        <element name="User" positionX="-225" positionY="198" width="128" height="223"/>
+    </elements>
+</model>
