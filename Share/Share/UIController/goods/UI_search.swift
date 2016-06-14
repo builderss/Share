@@ -15,6 +15,7 @@ class Search: UIViewController, UISearchBarDelegate {
     //origin data
     var arrTitle:[String] = []
     var arrDesc:[NSNumber] = []
+    
     //search state
     var isSearch = false
     //search data
@@ -28,6 +29,7 @@ class Search: UIViewController, UISearchBarDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
         let appContext = app.managedObjectContext
         
         arrTitle = []
@@ -133,12 +135,14 @@ class Search: UIViewController, UISearchBarDelegate {
         
         isSearch = true
         arrSearch = [String]()
+        
         for title in arrTitle{
             let index = title.rangeOfString(str)
             if (index?.isEmpty != nil) {
                 self.arrSearch.append(title)
             }
         }
+        
         TableView.reloadData()
     }
     

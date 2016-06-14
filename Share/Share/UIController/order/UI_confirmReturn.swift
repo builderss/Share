@@ -10,9 +10,33 @@ import CoreData
 
 class ConfirmReturn: UIViewController {
     
+    @IBOutlet weak var name_goods: UILabel!
+    @IBOutlet weak var startTime: UILabel!
+    @IBOutlet weak var endTime: UILabel!
+    @IBOutlet weak var borrowerName: UILabel!
+    @IBOutlet weak var borrowerPhone: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let app = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appContext = app.managedObjectContext
+        let fetchOrderRequest: NSFetchRequest = NSFetchRequest(entityName: "Order")
+        do{
+            let fetchedOrder = try appContext.executeFetchRequest(fetchOrderRequest) as! [Order]
+            for info: Order in fetchedOrder as! [Order]{
+                if(info.id_order == app.ID_selectedOrder){
+                    name_goods.text = info.beBorrowed?.name_goods!
+                    startTime.text = String(info.date_startUse)
+                    endTime.text = String(info.date_endUse)
+                    borrowerName.text = info.borrow?.name_user!
+                    borrowerPhone.text = String(Int((info.borrow?.phoneNumber)!))
+                }
+            }
+            
+        } catch {
+            fatalError("Failed to fetch Order: \(error)")
+        }
     }
     
     override func didReceiveMemoryWarning() {

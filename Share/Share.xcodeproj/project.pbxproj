@@ -39,6 +39,7 @@
 		D985ABBB1CDE2EC30015BD8C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985ABB91CDE2EC30015BD8C /* Category.swift */; };
 		D985ABCF1CDE2F2D0015BD8C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985ABC91CDE2F2D0015BD8C /* Order.swift */; };
 		D985ABD11CDE2F2D0015BD8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D985ABCB1CDE2F2D0015BD8C /* User.swift */; };
+		D9BC45D71D0F13B000423125 /* myDorm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BC45D61D0F13B000423125 /* myDorm.swift */; };
 		D9D4BE521CFC6726003422E3 /* UI_orderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D4BE511CFC6726003422E3 /* UI_orderHistory.swift */; };
 		D9FD7E6B1CD6442A0061822E /* UI_viewMyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD7E6A1CD6442A0061822E /* UI_viewMyInfo.swift */; };
 		D9FD7E6D1CD644640061822E /* UI_modifyAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FD7E6C1CD644640061822E /* UI_modifyAddress.swift */; };
@@ -110,6 +111,7 @@
 		D985ABB91CDE2EC30015BD8C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = DataClass/Category.swift; sourceTree = "<group>"; };
 		D985ABC91CDE2F2D0015BD8C /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = DataClass/Order.swift; sourceTree = "<group>"; };
 		D985ABCB1CDE2F2D0015BD8C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = DataClass/User.swift; sourceTree = "<group>"; };
+		D9BC45D61D0F13B000423125 /* myDorm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = myDorm.swift; path = UIController/goods/myDorm.swift; sourceTree = "<group>"; };
 		D9D4BE4E1CFC06BA003422E3 /* share 1. 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "share 1. 6.xcdatamodel"; sourceTree = "<group>"; };
 		D9D4BE511CFC6726003422E3 /* UI_orderHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UI_orderHistory.swift; path = UIController/order/UI_orderHistory.swift; sourceTree = "<group>"; };
 		D9FD7E6A1CD6442A0061822E /* UI_viewMyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UI_viewMyInfo.swift; path = UIController/User/UI_viewMyInfo.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				D94BFDAB1CD796B8006D0B6B /* UI_myData.swift */,
+				D9BC45D61D0F13B000423125 /* myDorm.swift */,
 				D90BEAE21CFB2AE50004E325 /* orderStatus */,
 				D95143401CECC1DB00514311 /* login */,
 				D951433F1CECC1AF00514311 /* userInfo */,
@@ -488,6 +491,7 @@
 				D9FD7E831CD6486E0061822E /* UI_Regist.swift in Sources */,
 				D95143381CECB49800514311 /* UI_callBack.swift in Sources */,
 				D951433E1CECB5A700514311 /* UI_modifyRent.swift in Sources */,
+				D9BC45D71D0F13B000423125 /* myDorm.swift in Sources */,
 				D90BEAEF1CFB2C530004E325 /* UI_confirmRequest.swift in Sources */,
 				D90BEADE1CFB08E50004E325 /* Goods+CoreDataProperties.swift in Sources */,
 				D976A3AF1CEA247300DE4DC5 /* UI_viewMyShare.swift in Sources */,

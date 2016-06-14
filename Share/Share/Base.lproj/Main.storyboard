@@ -27,12 +27,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="账号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZY-Om-4dv">
-                                <rect key="frame" x="68" y="200" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="密码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh8-U0-6Kr">
                                 <rect key="frame" x="68" y="256" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -54,6 +48,12 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOM-6W-GvW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZY-Om-4dv">
+                                <rect key="frame" x="68" y="200" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -70,7 +70,7 @@
         <!--Share-->
         <scene sceneID="FZO-nj-9Qg">
             <objects>
-                <viewController id="9HP-UU-fv4" customClass="Share" customModule="Share" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Share" id="9HP-UU-fv4" customClass="Share" customModule="Share" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2fI-Ba-tIL"/>
                         <viewControllerLayoutGuide type="bottom" id="IQW-Yf-9eU"/>
@@ -265,6 +265,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVS-hP-WHK">
                                 <rect key="frame" x="123" y="452" width="75" height="30"/>
                                 <state key="normal" title="返回主界面"/>
+                                <connections>
+                                    <action selector="returnButton:" destination="htU-Jk-Zoa" eventType="touchUpInside" id="dpI-91-2Rt"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EndTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7Y-dS-JfP">
                                 <rect key="frame" x="170" y="275" width="130" height="21"/>
@@ -288,6 +291,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="endTime" destination="e7Y-dS-JfP" id="rEw-BZ-43n"/>
+                        <outlet property="goodAddress" destination="IFO-kr-wef" id="o89-oe-gOY"/>
+                        <outlet property="goodName" destination="efJ-O7-tbf" id="e65-Qg-NEE"/>
+                        <outlet property="goodOwner" destination="yEC-uj-nGz" id="gfH-ac-sQ4"/>
+                        <outlet property="phoneNum" destination="O33-WX-rGV" id="S4o-xc-bIb"/>
+                        <outlet property="startTime" destination="DOU-wd-eb7" id="ics-NR-hUF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZM-5S-WeJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -578,14 +589,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v46-L9-0jd">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zwE-aR-jTX">
                                 <rect key="frame" x="0.0" y="108" width="320" height="411"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -594,17 +597,34 @@
                                     <outlet property="delegate" destination="eyi-ZF-bEc" id="Pob-rf-608"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EXE-rF-ITt">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eyi-ZF-bEc" id="JXP-QU-6fB"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="0gT-3n-F7T"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="SearchBar" destination="v46-L9-0jd" id="aqH-3i-5Fo"/>
+                        <outlet property="SearchBar" destination="EXE-rF-ITt" id="cJr-eH-6Zo"/>
                         <outlet property="TableView" destination="zwE-aR-jTX" id="tnQ-L8-kxT"/>
+                        <outlet property="searchDisplayController" destination="H5B-zk-0qt" id="dpG-PH-A2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKF-hx-gHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="H5B-zk-0qt">
+                    <connections>
+                        <outlet property="delegate" destination="eyi-ZF-bEc" id="eRQ-Sc-VBs"/>
+                        <outlet property="searchBar" destination="EXE-rF-ITt" id="gQN-XV-zeN"/>
+                        <outlet property="searchContentsController" destination="eyi-ZF-bEc" id="XAi-5T-yPs"/>
+                        <outlet property="searchResultsDataSource" destination="eyi-ZF-bEc" id="xrM-m2-IOT"/>
+                        <outlet property="searchResultsDelegate" destination="eyi-ZF-bEc" id="ara-IM-zBd"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="186" y="982"/>
         </scene>
@@ -665,6 +685,13 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWq-Iq-eLw">
+                                <rect key="frame" x="121" y="269" width="60" height="30"/>
+                                <state key="normal" title="我的围合"/>
+                                <connections>
+                                    <segue destination="l8k-SB-iVf" kind="show" id="PDp-LK-cqN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -955,12 +982,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYM-n5-mrr">
-                                <rect key="frame" x="53" y="310" width="51" height="26"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="联系电话：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5E-ei-ThD">
                                 <rect key="frame" x="53" y="360" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1060,6 +1081,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="围合：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYM-n5-mrr">
+                                <rect key="frame" x="53" y="313" width="56" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1114,7 +1141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Efy-Xv-AQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157" y="3072"/>
+            <point key="canvasLocation" x="599" y="3072"/>
         </scene>
         <!--Request Order-->
         <scene sceneID="YfW-Gy-Ezw">
@@ -1152,7 +1179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Blv-ep-YAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="3072"/>
+            <point key="canvasLocation" x="969" y="3072"/>
         </scene>
         <!--Confirm Get-->
         <scene sceneID="AsV-lh-b6t">
@@ -1249,6 +1276,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="endTime" destination="3Ez-LS-9cV" id="T1N-Vu-2vt"/>
+                        <outlet property="goodName" destination="XDW-TT-1Vd" id="LZL-1T-QD1"/>
+                        <outlet property="ownerName" destination="XxB-0f-HZu" id="iIf-2N-oIz"/>
+                        <outlet property="ownerPhone" destination="ub2-AA-5fp" id="wgr-pM-OMr"/>
+                        <outlet property="startTime" destination="7SV-OQ-5Nc" id="mG3-nw-X4c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8D-xY-SqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1349,6 +1383,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="borrowerName" destination="XQe-76-bH6" id="cMR-Fw-L1h"/>
+                        <outlet property="borrowerPhone" destination="n6N-As-PKq" id="k1O-cy-Plp"/>
+                        <outlet property="endTime" destination="2Dj-lz-P2b" id="JUx-fo-tYl"/>
+                        <outlet property="name_goods" destination="KuV-x6-bH7" id="1hX-Jt-83L"/>
+                        <outlet property="startTime" destination="Tdc-Nl-eEn" id="FCO-zP-BO0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILa-Bz-YlW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1449,6 +1490,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="borrowerName" destination="5Ka-na-inm" id="Zod-4m-9Cs"/>
+                        <outlet property="borrowerPhone" destination="Ww2-Xy-1Qv" id="jFV-wM-1eF"/>
+                        <outlet property="endTime" destination="6W4-1N-PLW" id="dv6-vf-A2a"/>
+                        <outlet property="name_goods" destination="MPT-Oq-VLQ" id="U7q-JW-hY3"/>
+                        <outlet property="startTime" destination="Rk9-q1-7fT" id="EC6-pn-qsu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pK5-VU-Vim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1490,7 +1538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZA-e5-0Pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="3072"/>
+            <point key="canvasLocation" x="1308" y="3072"/>
         </scene>
         <!--Return Order-->
         <scene sceneID="jFs-gH-UaD">
@@ -1528,7 +1576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aRZ-aW-jPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1280" y="3072"/>
+            <point key="canvasLocation" x="1650" y="3072"/>
         </scene>
         <!--Modify Address-->
         <scene sceneID="NWc-51-LnD">
@@ -1903,7 +1951,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9W-S2-hRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1629" y="3072"/>
+            <point key="canvasLocation" x="2037" y="2391"/>
         </scene>
         <!--View My Borrow-->
         <scene sceneID="8x8-Xy-7JQ">
@@ -1985,10 +2033,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTz-0e-tpa">
                                 <rect key="frame" x="145" y="437" width="30" height="30"/>
-                                <state key="normal" title="归还"/>
-                                <connections>
-                                    <action selector="Return:" destination="DnL-gf-Hcp" eventType="touchUpInside" id="erF-RQ-zhL"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="物品状态：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNG-r2-wJp">
                                 <rect key="frame" x="53" y="377" width="85" height="21"/>
@@ -2349,6 +2393,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6c-J9-VpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-309" y="3822"/>
+        </scene>
+        <!--My Dorm-->
+        <scene sceneID="anr-vc-xcu">
+            <objects>
+                <viewController storyboardIdentifier="myDorm" id="l8k-SB-iVf" customClass="myDorm" customModule="Share" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vRo-Yg-Aql"/>
+                        <viewControllerLayoutGuide type="bottom" id="hL6-Ob-NLj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Fc-eS-Oo9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xxw-i3-8DG">
+                                <rect key="frame" x="0.0" y="101" width="300" height="418"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="l8k-SB-iVf" id="C81-pT-OuO"/>
+                                    <outlet property="delegate" destination="l8k-SB-iVf" id="06g-fq-j2u"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的围合" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nu7-zk-gND">
+                                <rect key="frame" x="0.0" y="72" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="xxw-i3-8DG" id="log-pc-cb7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9p-4F-d3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="174" y="3072"/>
         </scene>
     </scenes>
 </document>

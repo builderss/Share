@@ -73,8 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try kk.removeItemAtURL(url)
         } catch {
             print("delete failed")
-        }
-        */
+        }*/
+        
         
         var failureReason = "There was an error creating or loading the application's saved data."
         do {

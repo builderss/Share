@@ -54,6 +54,12 @@ class Regist: UIViewController {
         if newUser.isRegisted(inputID){
             warnLabel.textColor = UIColor.redColor()
             warnLabel.text = "用户名已被注册"
+        } else if(inputID < 2000000000000){
+            warnLabel.textColor = UIColor.redColor()
+            warnLabel.text = "请输入正确的学号"
+        } else if (inputID > 3000000000000){
+            warnLabel.textColor = UIColor.redColor()
+            warnLabel.text = "请输入正确的学号"
         } else {
             //核对密码
             if(inputPassword == inputPasswordCorrect){
@@ -74,13 +80,14 @@ class Regist: UIViewController {
                 warnLabel.textColor = UIColor.greenColor()
                 warnLabel.text = "注册成功"
                 
+                self.navigationController?.popViewControllerAnimated(true)
+                
             } else {
                 warnLabel.textColor = UIColor.redColor()
                 warnLabel.text = "密码不一致"
             }
         }
     }
-    
     
 }
 

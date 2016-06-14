@@ -118,6 +118,9 @@ class GetGoods: UIViewController {
             }
             print ("添加成功 －－－－－ func ConfirmOrder")
             
+            app.ID_selectedOrder = Int(newOrder.id_order!)
+            print(newOrder.date_startUse)
+            
             let view = self.storyboard?.instantiateViewControllerWithIdentifier("OrderInfo")
             self.navigationController?.pushViewController(view!, animated: true)
         }

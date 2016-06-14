@@ -67,6 +67,10 @@ class AddGoods: UIViewController {
                         } catch let error as NSError{
                             print("can't add newGoods \(error.localizedDescription)")
                         }
+                        
+                        let view = self.storyboard?.instantiateViewControllerWithIdentifier("Share")
+                        self.navigationController?.pushViewController(view!, animated: true)
+                        
                         //Debug
                         print("物品添加成功 ----- func addNewGoods()")
                         let count = Int((info.goods?.count)!)
